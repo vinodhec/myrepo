@@ -1,108 +1,48 @@
-import React from 'react'
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native'
+import React from 'react';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout, IconRegistry } from '@ui-kitten/components';
+import { default as theme } from './theme.json'; // <-- Import app theme
+import { TabThemingShowcase } from './TabView';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
-import { AppHeader } from './AppHeader'
+const HomeScreen = () => (
+  <Layout >
+    <TabThemingShowcase></TabThemingShowcase>
+    {/* <Text category='h1'>HOME</Text>
+    <Text category='h2'>HOME</Text>
 
-export function App() {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          <AppHeader />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>
-                Code sharing using Monorepo
-              </Text>
-              <Text style={styles.sectionDescription}>
-                Edit{' '}
-                <Text style={styles.highlight}>
-                  packages/components/App.tsx
-                </Text>{' '}
-                to change this screen and then come back to see your edits (in
-                the phone or the browser).
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>
-                Web support via react-native-web
-              </Text>
-              <Text style={styles.sectionDescription}>
-                Run{' '}
-                <Text style={styles.highlight}>yarn workspace web start</Text>{' '}
-                to open this app in the browser.
-              </Text>
-              <Text style={styles.sectionDescription}>
-                It will share the same code from mobile, unless you create
-                platform-specific files using the{' '}
-                <Text style={styles.highlight}>.web.tsx</Text> extension (also
-                supports <Text style={styles.highlight}>.android</Text>,{' '}
-                <Text style={styles.highlight}>.ios</Text>,{' '}
-                <Text style={styles.highlight}>.native</Text>, etc).
-              </Text>
-            </View>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  )
-}
+    <Text category='h3'>HOME</Text>
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: 'white',
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: 'white',
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: 'black',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: 'gray',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: 'gray',
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-})
+    <Text category='h4'>HOME</Text>
 
-declare let global: {
-  HermesInternal?: boolean
-}
+    <Text category='h5'>HOME</Text>
+    <Text category='s1'>HOME</Text>
+    <Text category='s2'>HOME</Text>
+    <Text category='p1'>HOME</Text>
+    <Text category='p2'>HOME</Text>
+
+    <Text category='c1'>HOME</Text>
+    <Text category='c2'>HOME</Text>
+    <Text category='label'>HOME</Text>
+    <Text appearance='hint'>HOME</Text>
+    <Text appearance='alternative'>HOME</Text>
+    <Text category='label' status="primary">HOME</Text>
+    <Text category='label' status="success">HOME</Text>
+    <Text category='label' status="info">HOME</Text>
+    <Text category='label' status="warning">HOME</Text>
+    <Text category='label' status="danger">HOME</Text>
+    <Text category='label' status="basic">HOME</Text>
+    <Text category='label' status="control">HOME</Text> */}
+
+  </Layout>
+);
+
+export const App = () => (
+  <React.Fragment>
+  <IconRegistry icons={EvaIconsPack} />
+  <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
+    <HomeScreen />
+  </ApplicationProvider>
+  </React.Fragment>
+
+);

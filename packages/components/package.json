@@ -10,5 +10,11 @@
     "@types/react-native": "*",
     "react": "*",
     "react-native": "*"
+  },
+  "dependencies": {
+    "@eva-design/eva": "^2.1.1",
+    "@ui-kitten/components": "^5.1.2",
+    "@ui-kitten/eva-icons": "^5.1.2",
+    "react-native-svg": "^12.4.3"
   }
 }
